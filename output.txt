@@ -1,10 +1,10 @@
 0000 NOP
 0001 NOP
 0002 NOP
-0003 JMP    $18d4
+0003 JMP    $18d4       # continues setup at 18D4
 0006 NOP
 0007 NOP
-0008 PUSH   PSW
+0008 PUSH   PSW         # ISR address, 	(sp-2)<-flags; (sp-1)<-A; sp <- sp - 2
 0009 PUSH   B
 000a PUSH   D
 000b PUSH   H
@@ -4213,8 +4213,8 @@
 18cd NOP
 18ce CALL   $08ff
 18d1 JMP    $0ab6
-18d4 LXI    SP,#$2400
-18d7 MVI    B,#$00
+18d4 LXI    SP,#$2400       # sp = 2400
+18d7 MVI    B,#$00          #
 18d9 CALL   $01e6
 18dc CALL   $1956
 18df MVI    A,#$08
